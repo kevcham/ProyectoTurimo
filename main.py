@@ -33,11 +33,15 @@ app = FastAPI(
 # -------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],           # permite todos los orígenes
+    allow_origins=[
+        "http://localhost:3000",
+        "https://web-production-088e8.up.railway.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # -------------------------------
 # Ruta raíz de prueba

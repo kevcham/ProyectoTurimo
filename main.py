@@ -29,17 +29,11 @@ app = FastAPI(
 )
 
 # -------------------------------
-# Configuración de CORS (ampliado)
+# Configuración de CORS (solución universal)
 # -------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "https://localhost:3000",
-        "https://web-production-088e8.up.railway.app",
-        "http://web-production-088e8.up.railway.app",
-    ],
-    allow_origin_regex="https://.*\\.railway\\.app",
+    allow_origin_regex=".*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

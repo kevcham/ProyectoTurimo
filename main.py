@@ -29,7 +29,7 @@ app = FastAPI(
 )
 
 # -------------------------------
-# Configuración de CORS (permitir todo)
+# Configuración de CORS (ampliado)
 # -------------------------------
 app.add_middleware(
     CORSMiddleware,
@@ -39,13 +39,11 @@ app.add_middleware(
         "https://web-production-088e8.up.railway.app",
         "http://web-production-088e8.up.railway.app",
     ],
+    allow_origin_regex="https://.*\\.railway\\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-
 
 # -------------------------------
 # Ruta raíz de prueba
